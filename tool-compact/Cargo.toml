@@ -1,0 +1,11 @@
+[package]
+name = "nasiko-tool-compact"
+version = "0.1.0"
+edition = "2021"
+description = "Deterministic compact tool schemas and fail-closed compact-call decoding"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+

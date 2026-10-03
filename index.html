@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f6f7f3" />
+  <meta name="description" content="Nasiko CompactCall schema workspace" />
+  <title>CompactCall · Nasiko</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#page-content">Skip to main content</a>
+  <div class="app-shell">
+    <div class="mobile-scrim" id="mobile-scrim" hidden></div>
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#workspace" aria-label="CompactCall workspace"><span class="brand-mark">c</span><span class="brand-name">compactcall</span></a>
+      <div class="org-switch"><span class="org-avatar">N</span><span class="org-name"><b>Nasiko Studio</b><small>Personal workspace</small></span><span class="chevron">⌄</span></div>
+      <nav id="primary-nav" aria-label="Workspace areas"></nav>
+      <div class="sidebar-bottom"><div class="local-status"><span class="status-dot"></span><span>Local prototype</span></div><button class="profile-button" id="profile-button"><span class="profile-avatar">A</span><span class="profile-copy"><b>Alex Morgan</b><small id="role-caption">Administrator</small></span><span class="chevron">⌄</span></button></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar">
+        <button class="menu-button" id="menu-button" aria-label="Open navigation" aria-expanded="false">☰</button>
+        <div class="breadcrumbs" id="breadcrumbs">Workspace <span>/</span> Compact tool workspace</div>
+        <div class="topbar-actions"><span class="prototype-chip"><span class="status-dot"></span> Prototype</span><button class="quiet-button" id="help-button" aria-label="Open help">? <span>Help</span></button></div>
+      </header>
+      <div class="page-content" id="page-content" tabindex="-1"></div>
+      <footer class="app-footer"><span>COMPACTCALL <i>·</i> NASIKO</span><span>Compact the description. Keep the contract.</span><button id="footer-guide">Call grammar</button></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="help-dialog" class="modal"><div class="modal-head"><div><div class="overline">QUICK REFERENCE</div><h2>Compact call grammar</h2></div><button class="icon-button" id="close-help" aria-label="Close help">×</button></div><p>Calls can appear in normal model text. Arguments remain strict JSON and are validated against the original schema.</p><pre class="code-block">&lt;&lt;call tool_name {"argument":"value"}&gt;&gt;</pre><div class="grammar-list"><div><b>Exact tool names</b><span>Tool names match exactly. Unknown tools are rejected.</span></div><div><b>Stream safe</b><span>Opening markers, JSON values, and closing markers can span chunks.</span></div><div><b>Original schema wins</b><span>Unsupported schema features are bypassed; argument values are never repaired.</span></div></div><button class="button primary full" id="help-done">Done</button></dialog>
+  <input id="schema-file" type="file" accept=".json,application/json" hidden />
+  <script src="app.js"></script>
+</body>
+</html>

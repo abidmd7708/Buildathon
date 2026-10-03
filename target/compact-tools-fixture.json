@@ -1,0 +1,13 @@
+﻿{
+  "tools": [
+    {"type":"function","function":{"name":"create_calendar_event","description":"Create an event.","parameters":{"type":"object","properties":{"title":{"type":"string"},"start":{"type":"string","format":"date-time"},"visibility":{"type":"string","enum":["public","private"]}},"required":["title","start"],"additionalProperties":false}}}
+  ],
+  "cases": [
+    {"id":"normal-1","tool":"create_calendar_event","arguments":{"title":"Review","start":"2026-10-05T15:00:00Z","visibility":"private"}},
+    {"id":"normal-2","tool":"create_calendar_event","arguments":{"title":"Planning","start":"2026-10-06T09:00:00Z"}}
+  ],
+  "decoder_cases": [
+    {"id":"decoder-1","text":"Before <<call create_calendar_event {\"title\":\"Review >> note\",\"start\":\"2026-10-05T15:00:00Z\"}>> after"},
+    {"id":"decoder-2","chunks":["<<ca","ll create_calendar_event {\"title\":\"Split\",","\"start\":\"2026-10-05T15:00:00Z\"}",">>"]}
+  ]
+}

@@ -1,0 +1,12 @@
+[package]
+name = "nasiko-llm-router"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Minimal host package for the CompactCall evaluation example"
+
+[dependencies]
+nasiko-tool-compact = { path = "../tool-compact" }
+serde.workspace = true
+serde_json.workspace = true
+
